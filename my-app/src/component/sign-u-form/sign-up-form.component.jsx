@@ -78,7 +78,7 @@ const SignUpForm = () => {
             <div className="signup-container">
                   
                   <h2>Don't have an account?</h2>
-                  <span>Sign in with email and password</span>
+                  <span>Sign up with email and password</span>
 
                   <form onSubmit={handleSubmit}>
                         
@@ -92,7 +92,7 @@ const SignUpForm = () => {
                      
                         <FormInput required type='password' value={confirmPassword} onChange={onChangeHandler} name='confirmPassword' label='Confirm Password'/>
                         
-                        <Button  type='submit' buttonType={'inverted'} children='Sign IN' />
+                        <Button  type='submit' buttonType={''} children='Sign Up' />
 
                   </form>
 
