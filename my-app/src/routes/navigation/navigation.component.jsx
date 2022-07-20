@@ -1,8 +1,22 @@
 import { Outlet, Link } from "react-router-dom";
+import { useContext } from 'react'
+
+import { userContext } from "../../contexts/user.context";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
+
 import { ReactComponent as LOGO } from '../../assests/crown.svg'
 import './navigation.style.scss'
 
 const Navigation = () => {
+
+    
+
+      const {  currentUser } = useContext(userContext)
+      
+      // console.log(currentUser)
+
+     
+
       return (
         <>
                   <div className="navigation">
@@ -17,10 +31,16 @@ const Navigation = () => {
 
                               </Link>
 
-                              <Link className="nav-link" to='/auth'>
-                                    SIGN IN
+                              {
+                                    currentUser ? (
+                                          <span onClick={signOutUser} className="nav-link">SIGN OUT</span>
+                                    ) : (
+                                          <Link className="nav-link" to='/auth'> SIGN IN </Link>         
+                                                
+                                    )
+                              }
 
-                              </Link>
+                            
                               
                               
 
