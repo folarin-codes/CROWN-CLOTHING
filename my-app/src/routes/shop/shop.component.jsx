@@ -10,15 +10,15 @@ const Shop = () => {
 
       const { products } = useContext(ProductContext)
       
-      console.log(products)
+      console.log(products.id)
 
       return (
 
             <div className="product-container">
                   {
-                        products?.map((products) => {
+                        products.map((product) => {
                               return (
-                                    <ProductCard product={products} key={products.id} />
+                                    <ProductCard product={product} key={product.id} />
                               )
                         })
                   }
