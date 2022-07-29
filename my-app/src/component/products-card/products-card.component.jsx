@@ -12,6 +12,7 @@ const ProductCard = ({ product }) => {
       const { name, price, imageUrl } = product
       
       const addProductToCart = () => {
+            // alert('i was clicked')
             addItemToCart(product)
             
       }
