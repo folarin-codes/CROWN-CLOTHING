@@ -4,19 +4,23 @@ import { useContext } from 'react'
 import CartIcon from "../../component/cart-icon/cart-icon.component";
 import CartDropdown from "../../component/cart-dropdown/cart-dropdown.component";
 
-import { userContext } from "../../contexts/user.context";
 import { CartContext } from "../../contexts/cart.context";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 import { ReactComponent as LOGO } from '../../assests/crown.svg'
-import './navigation.style.scss'
+
+import { NavigationContainer, NavLinksContainer, LogoContainer, NavLink } from './navigation.style.jsx'
+
+
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../store/user/user.selector";
 
 const Navigation = () => {
 
-    
+    const currentUser = useSelector(selectCurrentUser )
 
-      const {  currentUser } = useContext(userContext)
+    //  const {  currentUser } = useContext(userContext)
       
       const {isCartOpen} = useContext(CartContext)
 
@@ -24,23 +28,23 @@ const Navigation = () => {
 
       return (
         <>
-                  <div className="navigation">
-                        <Link to='/'>
+                  <NavigationContainer>
+                        <LogoContainer to='/'>
                              <LOGO/>
-                        </Link>
+                        </LogoContainer>
 
-                        <div className="nav-links-container">
+                        <NavLinksContainer >
                               
-                              <Link className="nav-link" to='/shop'>
+                              <NavLink className="nav-link" to='/shop'>
                                     SHOP
 
-                              </Link>
+                              </NavLink>
 
                               {
                                     currentUser ? (
-                                          <span onClick={signOutUser} className="nav-link">SIGN OUT</span>
+                                          <NavLink as={'span'} onClick={signOutUser} className="nav-link">SIGN OUT</NavLink>
                                     ) : (
-                                          <Link className="nav-link" to='/auth'> SIGN IN </Link>         
+                                          <NavLink className="nav-link" to='/auth'> SIGN IN </NavLink>         
                                                 
                                     )
                               }
@@ -51,11 +55,11 @@ const Navigation = () => {
                               
                               
 
-                        </div>
+                        </NavLinksContainer>
 
                       
                         
-                  </div>
+                  </NavigationContainer>
                   {isCartOpen && <CartDropdown />}
                   <Outlet/>
        
