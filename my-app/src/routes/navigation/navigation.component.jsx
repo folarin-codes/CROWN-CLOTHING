@@ -50,15 +50,10 @@ const Navigation = () => {
                               }
 
                               <CartIcon/>
-
-                            
-                              
-                              
+  
 
                         </NavLinksContainer>
-
-                      
-                        
+                              
                   </NavigationContainer>
                   {isCartOpen && <CartDropdown />}
                   <Outlet/>

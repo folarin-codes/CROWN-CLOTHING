@@ -5,8 +5,8 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App';
 import { Provider } from 'react-redux';
 
-import { UserProvider } from './contexts/user.context';
-import { CategoriesProvider } from './contexts/categories.context';
+// import { UserProvider } from './contexts/user.context';
+// import { CategoriesProvider } from './contexts/categories.context';
 import { CartProvider } from './contexts/cart.context';
 
 import { store } from './store/store';
@@ -19,11 +19,12 @@ root.render(
   <React.StrictMode>
     
     <Provider store={store}>
+      
      <BrowserRouter>
       
-      <UserProvider>
+      {/* <UserProvider> */}
         
-        <CategoriesProvider>
+        {/* <CategoriesProvider> */}
           
           <CartProvider>
             
@@ -34,9 +35,9 @@ root.render(
         
 
 
-        </CategoriesProvider>
+        {/* </CategoriesProvider> */}
    
-        </UserProvider>
+        {/* </UserProvider> */}
       
        </BrowserRouter>
       </Provider>
@@ -44,7 +45,4 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
