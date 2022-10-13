@@ -17,7 +17,7 @@ const Category = () => {
 
       const categories = useSelector(selectCategoriesMap);
       
-      
+       
       const [products, setProducts] = useState(categories[category])
 
       useEffect(() => {

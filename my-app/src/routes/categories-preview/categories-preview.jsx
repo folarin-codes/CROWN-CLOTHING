@@ -23,7 +23,8 @@ const CategoriesPreview = () => {
 
             
                   
-                  <>
+            <>
+                  
                         {
                         Object.keys(categoriesMap).map((title) => {
                                     

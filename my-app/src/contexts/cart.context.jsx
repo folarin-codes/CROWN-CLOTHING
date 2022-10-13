@@ -65,7 +65,7 @@ const CART_ACTION_TYPES = {
       SET_CART_OPEN :"SET_CART_OPEN"
 }
  
-const cartReducer = (state, action) => {
+export const cartReducer = (state, action) => {
 
       const { type, payload } = action
       

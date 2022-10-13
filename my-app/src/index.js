@@ -26,11 +26,11 @@ root.render(
         
         {/* <CategoriesProvider> */}
           
-          <CartProvider>
+          {/* <CartProvider> */}
             
             <App />
 
-          </CartProvider>
+          {/* </CartProvider> */}
                
         
 
